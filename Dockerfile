@@ -32,6 +32,7 @@ RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pu
     patchutils \
     curl \
     procps \
+    language-pack-en \
   && rm -rf /var/lib/apt/lists/*
 
 # Install git from launchpad maintain repo
