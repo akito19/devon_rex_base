@@ -54,14 +54,6 @@ RUN update-locale en_US.UTF-8
 RUN mkdir /root/work
 WORKDIR /root/work
 
-# Install hub
-RUN wget https://github.com/github/hub/releases/download/v2.2.3/hub-linux-amd64-2.2.3.tgz
-RUN tar -xf hub-linux-amd64-2.2.3.tgz
-ENV PATH $PATH:/root/work/hub-linux-amd64-2.2.3/bin
-RUN echo 'alias git=hub' >> ~/.bashrc
-RUN mkdir /root/.config
-ADD hub /root/.config/hub
-
 # Set Git config
 RUN git config --global diff.compactionHeuristic true
 
