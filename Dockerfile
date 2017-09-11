@@ -1,8 +1,10 @@
 FROM ubuntu:16.04
 
-RUN apt-get dist-upgrade -y
-
-RUN apt-get update -y && apt-get install -y \
+ENV DEBIAN_FRONTEND=noninteractive
+RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list && \
+    apt-get update -y && \
+    apt-get dist-upgrade -y && \
+    apt-get install -y \
     autoconf \
     build-essential \
     imagemagick \
