@@ -28,18 +28,14 @@ RUN apt-get update -y && apt-get install -y \
     python-software-properties \
     software-properties-common \
     patchutils \
+    curl \
+    procps \
   && rm -rf /var/lib/apt/lists/*
 
 # Install git from launchpad maintain repo
 RUN add-apt-repository ppa:git-core/ppa -y && apt-get update -y && apt-get install -y \
     git \
   && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update -y && apt-get install -y \
-    curl \
-  && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update -y && apt-get install -y curl procps && rm -rf /var/lib/apt/lists/*
 
 # Add locales
 RUN locale-gen $(grep '\.UTF-8' /usr/share/i18n/SUPPORTED | awk '{ print $1 }')
