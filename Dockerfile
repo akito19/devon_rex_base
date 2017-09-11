@@ -38,7 +38,7 @@ RUN add-apt-repository ppa:git-core/ppa -y && apt-get update -y && apt-get insta
   && rm -rf /var/lib/apt/lists/*
 
 # Add locales
-RUN locale-gen $(grep '\.UTF-8' /usr/share/i18n/SUPPORTED | awk '{ print $1 }')
+RUN locale-gen en_US.UTF-8
 
 # Set default locale
 ENV LC_ALL en_US.UTF-8
