@@ -43,10 +43,9 @@ RUN add-apt-repository ppa:git-core/ppa -y && apt-get update -y && apt-get insta
 RUN locale-gen en_US.UTF-8
 
 # Set default locale
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8 \
+    LANG=en_US.UTF-8
 
-RUN apt-get update -y && apt-get install -y language-pack-ja
 RUN update-locale en_US.UTF-8
 
 RUN mkdir /root/work
@@ -56,8 +55,8 @@ WORKDIR /root/work
 RUN git config --global diff.compactionHeuristic true
 
 # Install Ruby to use ruby script in node. e.g.) to expand glob
-ENV RUBY_MAJOR 2.4
-ENV RUBY_VERSION 2.4.1
+ENV RUBY_MAJOR=2.4 \
+    RUBY_VERSION=2.4.1
 
 # some of ruby's build scripts are written in ruby
 # we purge this later to make sure our final image uses what we just built
