@@ -1,2 +1,2 @@
 build:
-	docker build -t quay.io/actcat/buildpack_base:dev .
+	docker build -t quay.io/actcat/devon_rex_base:dev .
