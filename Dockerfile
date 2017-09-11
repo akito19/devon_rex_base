@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:xenial-20170802
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list && \
@@ -32,6 +32,7 @@ RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pu
     patchutils \
     curl \
     procps \
+    language-pack-en \
   && rm -rf /var/lib/apt/lists/*
 
 # Install git from launchpad maintain repo
