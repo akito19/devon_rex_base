@@ -1,7 +1,5 @@
 FROM ubuntu:14.04
 
-MAINTAINER Vexus2 <hikaru.tooyama@gmail.com>
-
 RUN apt-get dist-upgrade -y
 
 RUN apt-get update -y && apt-get install -y \
