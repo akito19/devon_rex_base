@@ -33,10 +33,6 @@ RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pu
     curl \
     procps \
     language-pack-en \
-  && rm -rf /var/lib/apt/lists/*
-
-# Install git from launchpad maintain repo
-RUN add-apt-repository ppa:git-core/ppa -y && apt-get update -y && apt-get install -y \
     git \
   && rm -rf /var/lib/apt/lists/*
 
@@ -51,9 +47,6 @@ RUN update-locale en_US.UTF-8
 
 RUN mkdir /root/work
 WORKDIR /root/work
-
-# Set Git config
-RUN git config --global diff.compactionHeuristic true
 
 # Install Ruby to use ruby script in node. e.g.) to expand glob
 ENV RUBY_MAJOR=2.4 \
