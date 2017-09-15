@@ -49,7 +49,7 @@ WORKDIR /root/work
 
 # Install Ruby to use ruby script in node. e.g.) to expand glob
 ENV RUBY_MAJOR=2.4 \
-    RUBY_VERSION=2.4.1
+    RUBY_VERSION=2.4.2
 
 # some of ruby's build scripts are written in ruby
 # we purge this later to make sure our final image uses what we just built
