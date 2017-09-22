@@ -33,6 +33,7 @@ RUN apt-get update -y && \
     procps \
     language-pack-en \
     git \
+    unzip \
   && rm -rf /var/lib/apt/lists/*
 
 # Add locales
